@@ -139,8 +139,8 @@
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.gogo.shell</artifactId>
-            <version>1.0.0</version>
+            <artifactId>org.apache.felix.gogo.jline</artifactId>
+            <version>1.0.10</version>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -181,6 +181,16 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.util.promise</artifactId>
             <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-security-oauth2</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-sse</artifactId>
+            <version>${cxf.version}</version>
         </dependency>
     </dependencies>
 </project>
