@@ -17,24 +17,44 @@
 
 -standalone: true
 
+-plugin.central: \
+	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
+		pom="${.}/pom.xml";\
+		releaseUrls="https://repo.maven.apache.org/maven2/";\
+		location="${.}/target/self.index.xml";\
+		name="Index self so we can reference non-bundles in runpath";\
+		readOnly=true
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.jax.rs.itests)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.jax.rs.whiteboard)'
 -runpath: \
 	ch.qos.logback.classic;version='[1.2.3,1.2.4)',\
 	ch.qos.logback.core;version='[1.2.3,1.2.4)',\
+	com.sun.xml.bind.jaxb-impl;version='[2.3.0,2.3.1)',\
+	com.sun.istack.commons-runtime;version='[3.0.7,3.0.8)',\
+	jaxb-api;version='[2.2.11,2.2.12)',\
 	org.apache.felix.logback;version='[1.0.0,1.0.1)',\
-	slf4j.api;version='[1.7.25,1.7.26)'
+	slf4j.api;version='[1.7.25,1.7.26)',\
+	com.sun.activation.javax.activation;version='[1.2.0,1.2.1)',\
+	org.glassfish.jaxb:jaxb-core,\
+	org.glassfish.jaxb:jaxb-runtime
 -runsystempackages: \
+	javax.xml.bind;version=2.2.11,\
+	javax.xml.bind.annotation;version=2.2.11,\
+	javax.xml.bind.annotation.adapters;version=2.2.11,\
+	javax.xml.bind.attachment;version=2.2.11,\
+	javax.xml.bind.helpers;version=2.2.11,\
+	javax.xml.bind.util;version=2.2.11,\
 	org.slf4j;version=1.7.25,\
 	org.slf4j.event;version=1.7.25,\
 	org.slf4j.helpers;version=1.7.25,\
 	org.slf4j.spi;version=1.7.25
+
 -runfw: org.eclipse.osgi;version=3.13.100
 
 #-runtrace: true
 
--runee: JavaSE-1.11
+-runee: JavaSE-11
 -resolve.effective: resolve, active
 
 -runsystemcapabilities: ${native_capability}
@@ -53,6 +73,7 @@
 	org.apache.felix.http.jetty;version='[3.4.0,3.4.1)',\
 	org.apache.felix.http.servlet-api;version='[1.1.2,1.1.3)',\
 	org.apache.servicemix.specs.annotation-api-1.3;version='[1.3.0,1.3.1)',\
+	org.osgi.service.http.whiteboard;version='[1.0.0,1.0.1)',\
 	org.osgi.service.jaxrs;version='[1.0.0,1.0.1)',\
 	org.osgi.util.function;version='[1.1.0,1.1.1)',\
 	org.osgi.util.promise;version='[1.1.0,1.1.1)',\
@@ -62,10 +83,7 @@
 	org.apache.aries.jax.rs.itests;version='[1.0.2,1.0.3)',\
 	org.apache.aries.jax.rs.itests-fragment;version='[1.0.2,1.0.3)',\
 	org.apache.aries.jax.rs.whiteboard;version='[1.0.2,1.0.3)',\
-	org.apache.felix.http.api;version='[3.0.0,3.0.1)',\
 	javax.xml.soap-api;version='[1.3.5,1.3.6)',\
-	javax.xml.ws.jaxws-api;version='[2.2.9,2.2.10)',\
-	com.sun.activation.javax.activation;version='[1.2.0,1.2.1)',\
-	jaxb-api;version='[2.2.11,2.2.12)'
+	javax.xml.ws.jaxws-api;version='[2.2.9,2.2.10)'
 
 -include: -personal.bnd

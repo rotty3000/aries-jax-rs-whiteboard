@@ -36,7 +36,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cxf.version>3.2.5</cxf.version>
-        <bnd.version>4.0.0</bnd.version>
+        <bnd.version>4.1.0-SNAPSHOT</bnd.version>
         <dsl.version>1.2.1</dsl.version>
     </properties>
 
@@ -172,5 +172,18 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bnd-snapshots</id>
+            <url>https://bndtools.ci.cloudbees.com/job/bnd.master/lastSuccessfulBuild/artifact/dist/bundles/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
