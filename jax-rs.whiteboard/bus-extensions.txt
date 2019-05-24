@@ -1,0 +1,3 @@
+${cat;jar:cxf-core-*.jar!/META-INF/cxf/bus-extensions.txt}
+${cat;jar:cxf-rt-rs-sse-*.jar!/META-INF/cxf/bus-extensions.txt}
+${cat;jar:cxf-rt-transports-http-*.jar!/META-INF/cxf/bus-extensions.txt}

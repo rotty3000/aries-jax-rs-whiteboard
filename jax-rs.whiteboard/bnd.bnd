@@ -52,13 +52,15 @@ Import-Package:\
     *
 
 -includeresource:\
-    lib/component-dsl.jar=org.apache.aries.component-dsl.component-dsl-*.jar;lib:=true,\
-    lib/cxf-core.jar=cxf-core-*.jar;lib:=true,\
-    lib/cxf-rt-frontend-jaxrs.jar=cxf-rt-frontend-jaxrs-*.jar;lib:=true,\
-    lib/cxf-rt-rs-client.jar=cxf-rt-rs-client-*.jar;lib:=true,\
-    lib/cxf-rt-rs-sse.jar=cxf-rt-rs-sse-*.jar;lib:=true,\
-    lib/cxf-rt-transports-http.jar=cxf-rt-transports-http-*.jar;lib:=true,\
-    lib/cxf-tools-common.jar=cxf-tools-common-*.jar;lib:=true,\
-    lib/stax2-api.jar=stax2-api-*.jar;lib:=true,\
-    lib/woodstox-core.jar=woodstox-core-*.jar;lib:=true,\
-    lib/xmlschema-core.jar=xmlschema-core-*.jar;lib:=true
+    @org.apache.aries.component-dsl.component-dsl-*.jar,\
+    @cxf-core-*.jar,\
+    @cxf-rt-frontend-jaxrs-*.jar,\
+    @cxf-rt-rs-client-*.jar,\
+    @cxf-rt-rs-sse-*.jar,\
+    @cxf-rt-transports-http-*.jar,\
+    @cxf-tools-common-*.jar,\
+    @stax2-api-*.jar,\
+    @woodstox-core-*.jar,\
+    @xmlschema-core-*.jar,\
+    META-INF/services/javax.ws.rs.client.ClientBuilder;literal="org.apache.aries.jax.rs.whiteboard.internal.client.ClientBuilderImpl",\
+    {META-INF/cxf/bus-extensions.txt=${.}/bus-extensions.txt}
